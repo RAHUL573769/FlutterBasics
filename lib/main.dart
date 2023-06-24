@@ -21,8 +21,20 @@ class GradientColor extends StatelessWidget {
         gradient: LinearGradient(colors: [Colors.purpleAccent, Colors.blue]),
       ),
       // child: TextWidget('Hello '),
-      child: const Center(
-        child: ImageWidget(),
+      child: Center(
+        child: Column(
+          children: [
+            TextWidget('Hello '),
+            const ImageWidget(),
+            const SizedBox(
+              height: 20,
+            ),
+            TextButton(
+              onPressed: () => {},
+              child: Text("Roll Dice"),
+            )
+          ],
+        ),
       ),
     );
   }
