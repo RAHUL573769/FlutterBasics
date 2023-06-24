@@ -16,12 +16,21 @@ class GradientColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(colors: [Colors.purpleAccent, Colors.purple]),
-      ),
-      child: const Center(
-        child: Text("Hello World", style: TextStyle(fontSize: 34)),
-      ),
+        decoration: const BoxDecoration(
+          gradient:
+              LinearGradient(colors: [Colors.purpleAccent, Colors.purple]),
+        ),
+        child: const TextWidget());
+  }
+}
+
+class TextWidget extends StatelessWidget {
+  const TextWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Hello World", style: TextStyle(fontSize: 34)),
     );
   }
 }
