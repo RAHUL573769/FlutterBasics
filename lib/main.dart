@@ -4,33 +4,37 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientColor(),
+        body: GradientColor(Colors.purple, Colors.blue),
       ),
     ),
   );
 }
 
 class GradientColor extends StatelessWidget {
-  const GradientColor({Key? key}) : super(key: key);
-
+  const GradientColor(this.color1, this.color2, {super.key});
+  final Color color1;
+  final Color color2;
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: const BoxDecoration(
-          gradient:
-              LinearGradient(colors: [Colors.purpleAccent, Colors.purple]),
-        ),
-        child: const TextWidget());
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: [Colors.purpleAccent, Colors.blue]),
+      ),
+      child: TextWidget('Hello '),
+    );
   }
 }
 
 class TextWidget extends StatelessWidget {
-  const TextWidget({Key? key}) : super(key: key);
-
+  TextWidget(this.text, {super.key});
+  String text;
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Hello World", style: TextStyle(fontSize: 34)),
+    return Center(
+      child: Text(
+        text,
+        style: const TextStyle(fontSize: 34),
+      ),
     );
   }
 }
