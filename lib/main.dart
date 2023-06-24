@@ -20,7 +20,10 @@ class GradientColor extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(colors: [Colors.purpleAccent, Colors.blue]),
       ),
-      child: TextWidget('Hello '),
+      // child: TextWidget('Hello '),
+      child: const Center(
+        child: ImageWidget(),
+      ),
     );
   }
 }
@@ -35,6 +38,18 @@ class TextWidget extends StatelessWidget {
         text,
         style: const TextStyle(fontSize: 34),
       ),
+    );
+  }
+}
+
+class ImageWidget extends StatelessWidget {
+  const ImageWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      'images/dice-images/dice-1.png',
+      width: 200,
     );
   }
 }
