@@ -23,6 +23,7 @@ class GradientColor extends StatelessWidget {
       // child: TextWidget('Hello '),
       child: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             TextWidget('Hello '),
             const ImageWidget(),
@@ -31,7 +32,12 @@ class GradientColor extends StatelessWidget {
             ),
             TextButton(
               onPressed: () => {},
-              child: Text("Roll Dice"),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(20),
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(fontSize: 28),
+              ),
+              child: const Text("Roll Dice"),
             )
           ],
         ),
